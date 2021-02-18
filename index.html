@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>网易云音乐-首页</title>
+		<link rel="icon" href="img/NetEasy.png" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="layui-v2.5.7/layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="css/APlayer.min.css" />
+		<style type="text/css">
+			#banner img {
+				width: 100%;
+				height: 100%;
+			}
+
+			#recommend img {
+				/* width: 80%;
+				height: 80%; */
+				width: 140px;
+				height: 140px;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			#recommend p {
+				/* width: 80%; */
+				width: 140px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			#rank img {
+				margin-left: 7%;
+				margin-bottom: 5%;
+			}
+
+			.right_td {
+				width: 23%;
+				display: inline-block;
+				text-align: center;
+			}
+
+			.gray {
+				color: #90949c;
+			}
+
+			.gcs-footer {
+				width: 100%;
+				height: 120px;
+				text-align: center;
+				color: white;
+				position: absolute;
+				margin-bottom: 20px;
+			}
+
+			.gcs-footer .footer-top {
+				margin-top: 20px;
+			}
+
+			.gcs-footer a {
+				text-decoration: none;
+				padding: 0 10px;
+				vertical-align: middle;
+			}
+
+			.gcs-footer a:hover {
+				color: red;
+				text-decoration: underline;
+			}
+
+			.gcs-footer p {
+				height: 15px;
+				color: #888888;
+				margin-top: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="layui-nav" lay-filter="">
+			<li class="layui-nav-item"><img src="img/NetEasy.png" /></li>
+			<li class="layui-nav-item layui-this"><a href="">发现音乐</a></li>
+			<li class="layui-nav-item"><a href="">我的音乐</a></li>
+			<li class="layui-nav-item"><a href="">朋友</a></li>
+			<li class="layui-nav-item"><a href="">商城</a></li>
+			<li class="layui-nav-item"><a href="">音乐人</a></li>
+			<li class="layui-nav-item"><a target="_blank" href="https://music.163.com/stat/?web=pc&from=download&t=1610548843346&redirect=https%3A%2F%2Fmusic.163.com%2Fapi%2Fpc%2Fpackage%2Fdownload%2Flatest">下载客户端<span
+					 class="layui-badge">HOT</span></a></li>
+		</ul>
+		<div class="layui-container">
+			<div class="layui-row">
+				<div class="layui-col-md9">
+					<div class="layui-carousel" id="banner">
+						<div carousel-item>
+							<div><img src="img/banner/1.jpg" /></div>
+							<div><img src="img/banner/2.jpg" /></div>
+							<div><img src="img/banner/3.jpg" /></div>
+							<div><img src="img/banner/4.jpg" /></div>
+							<div><img src="img/banner/5.jpg" /></div>
+							<div><img src="img/banner/6.jpg" /></div>
+							<div><img src="img/banner/7.jpg" /></div>
+							<div><img src="img/banner/8.jpg" /></div>
+							<div><img src="img/banner/9.jpg" /></div>
+						</div>
+					</div>
+				</div>
+				<div class="layui-col-md3">
+					<div class="layui-card-body">
+						<div class="layui-col-md9">
+							<div class="layui-input-inline">
+								<input type="text" id="searchTxt" placeholder="搜索音乐" autocomplete="off" class="layui-input">
+
+							</div>
+
+						</div>
+						<div class="layui-col-md3">
+							<button type="button" id="searchBtn" class="layui-btn"> <i class="layui-icon">&#xe615;</i></button>
+						</div>
+						<div style="height:90px;width:60px;float:left;text-align: center;margin-top: 10px;">
+							<img src="img/head.jpg" style="height:60px;width:60px;">
+							<span class="layui-badge">Lv10</span>
+						</div>
+						<div style="float:left;margin-left: 5px;margin-top: 10px;">
+							<a id="author2_A" href="#">
+								<h2>网抑云</h2>
+							</a>
+							<p class="gray"><i class="layui-icon layui-icon-location"></i> 山东 济宁</p>
+							<button id="qiandao" class="layui-btn layui-btn-normal layui-btn-sm" style="float:left;margin-left: 5px;border-radius: 5px;">签&nbsp;到</button>
+						</div>
+
+						<hr>
+						<div class="right_td">
+							<span style="font-size: 18px;font-weight: 700;">50</span>
+							<p class="gray">动态</p>
+						</div>
+						<div class="right_td">
+							<span style="font-size: 18px;font-weight: 700;">25</span>
+							<p class="gray">评论</p>
+						</div>
+						<div class="right_td">
+							<span style="font-size: 18px;font-weight: 700;">18</span>
+							<p class="gray">关注</p>
+						</div>
+						<div class="right_td">
+							<span style="font-size: 18px;font-weight: 700;">12</span>
+							<p class="gray">粉丝</p>
+						</div>
+						<!--个人简介  -->
+						<div style="margin-top:3px;">
+							<p class="gray">你看到的光，自以为是希望。以为能摆脱厄运。可到了最后发现，那竟是没有山谷的回声。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="layui-row">
+				<div id="recommend" class="layui-col-xs6 layui-col-sm6 layui-col-md9">
+					<fieldset class="layui-elem-field layui-field-title">
+						<legend>热门推荐<span class="layui-breadcrumb" lay-separator="|" style="margin-left: 25px;">
+								<a href="">华语</a>
+								<a href="">流行</a>
+								<a href="">摇滚</a>
+								<a href="">民谣</a>
+								<a href="">电子</a>
+							</span></legend>
+						<div class="layui-field-box">
+							<div class="layui-row" style="margin-top: 5px;">
+								<div class="layui-col-md3">
+									<img src="img/recommend/1.jpg" />
+									<p><a href="#">流行风暴 | 2020年的时候我们都在听什么</a></p>
+								</div>
+
+								<div class="layui-col-md3">
+									<img src="img/recommend/2.jpg" />
+									<p><a href="#">[一周原创发现] 谭松韵&谢春花跨界合作共同送上2021最美好的祝福</a></p>
+								</div>
+								<div class="layui-col-md3">
+									<img src="img/recommend/3.jpg" />
+									<p><a href="#">私人雷达 | 根据听歌记录为你打造</a></p>
+								</div>
+
+								<div class="layui-col-md3">
+									<img src="img/recommend/4.jpg" />
+									<p><a href="#"><span class="layui-badge">电台节目</span>&nbsp;Vol.480 #我的流金岁月#置之死地而后生</a></p>
+								</div>
+							</div>
+							<div class="layui-row" style="margin-top: 15px;">
+								<div class="layui-col-md3">
+									<img src="img/recommend/5.jpg" />
+									<p><a href="#">薛之谦-谦友专属</a></p>
+								</div>
+								<div class="layui-col-md3">
+									<img src="img/recommend/6.jpg" />
+									<p><a href="#">天津都市怪谈之灵异大搜罗-壹</a></p>
+								</div>
+								<div class="layui-col-md3">
+									<img src="img/recommend/7.jpg" />
+									<p><a href="#">值得单曲循环的华语良曲（一人一首）</a></p>
+								</div>
+								<div class="layui-col-md3">
+									<img src="img/recommend/8.jpg" />
+									<p><a href="#"> 云泥</a></p>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+
+				</div>
+				<div class="layui-col-md3">
+					<div class="layui-card">
+						<div class="layui-card-header">入驻歌手</div>
+						<div class="layui-card-body">
+							<div class="layui-row">
+								<div class="layui-col-md4">
+									<img src="img/musican/zhanghuimei.jpg" />
+								</div>
+								<div class="layui-col-md8">
+									<p>张惠妹aMEI</p>
+									<p style="font-size: smaller;" class="gray">台湾歌手张惠妹</p>
+								</div>
+							</div>
+							<hr />
+							<div class="layui-row">
+								<div class="layui-col-md4">
+									<img src="img/musican/fine.jpg" />
+								</div>
+								<div class="layui-col-md8">
+									<p>Fine乐团</p>
+									<p style="font-size: smaller;" class="gray">独立音乐人</p>
+								</div>
+							</div>
+							<hr />
+							<div class="layui-row">
+								<div class="layui-col-md4">
+									<img src="img/musican/wanxiaoli.jpg" />
+								</div>
+								<div class="layui-col-md8">
+									<p>萬曉利</p>
+									<p style="font-size: smaller;" class="gray">民谣歌手</p>
+								</div>
+							</div>
+							<hr />
+							<div class="layui-row">
+								<div class="layui-col-md4">
+									<img src="img/musican/zhaolei.jpg" />
+								</div>
+								<div class="layui-col-md8">
+									<p>音乐人赵雷</p>
+									<p style="font-size: smaller;" class="gray">民谣歌手</p>
+								</div>
+							</div>
+							<hr />
+							<div class="layui-row">
+								<div class="layui-col-md4">
+									<img src="img/musican/wangsanbo.jpg" />
+								</div>
+								<div class="layui-col-md8">
+									<p>王三溥</p>
+									<p style="font-size: smaller;" class="gray">音乐人</p>
+								</div>
+							</div>
+							<hr>
+							<button type="button" id="apply" class="layui-btn layui-btn-primary layui-btn-sm layui-btn-fluid">申请成为网易音乐人</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="layui-row">
+				<div id="recommend" class="layui-col-xs6 layui-col-sm6 layui-col-md9">
+					<fieldset class="layui-elem-field layui-field-title">
+						<legend>个性化推荐</legend>
+						<div class="layui-field-box">
+							<div class="layui-row" style="margin-top: 5px;">
+								<div class="layui-col-md3">
+									<img src="img/recommend/9.jpg" />
+									<p><a href="#">开启心动模式，耳机里的糖分你一半</a></p>
+								</div>
+
+								<div class="layui-col-md3">
+									<img src="img/recommend/10.jpg" />
+									<p><a href="#">网络流行热歌 持续更新</a></p>
+								</div>
+								<div class="layui-col-md3">
+									<img src="img/recommend/12.jpg" />
+									<p><a href="#"><span class="layui-badge">电台节目</span>&nbsp;夏天在另外那个电台的最下面</a></p>
+								</div>
+
+								<div class="layui-col-md3">
+									<img src="img/recommend/11.jpg" />
+									<p><a href="#"> 把孤独藏进耳机，也许内心会得到治愈</a></p>
+								</div>
+							</div>
+
+						</div>
+					</fieldset>
+				</div>
+			</div>
+
+			<div class="layui-row">
+				<div id="rank" class="layui-col-xs6 layui-col-sm6 layui-col-md9">
+					<fieldset class="layui-elem-field layui-field-title">
+						<legend>榜单</legend>
+						<div class="layui-field-box">
+							<div class="layui-row" style="margin-top: 5px;">
+								<div class="layui-col-md4">
+									<div class="layui-row">
+										<div class="layui-col-md5">
+											<img src="img/rank1.jpg">
+										</div>
+										<div class="layui-col-md7">
+											<div class="layui-row">
+												<p style="font-size: 18px;font-weight: bold;">飙升榜</p>
+											</div>
+											<div class="layui-row" style="margin-top: 10px;">
+												<i class="layui-icon layui-icon-play" style="font-size: 22px;"></i>
+												<i class="layui-icon layui-icon-star" style="font-size: 22px;"></i>
+											</div>
+										</div>
+									</div>
+									<table class="layui-table"  lay-skin="nob">
+										<colgroup>
+											<col width="150">
+											<col width="200">
+											<col>
+										</colgroup>
+										<tbody>
+											<tr>
+												<td><span class="layui-badge">1</span>&nbsp;&nbsp;为什么</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge">2</span>&nbsp;&nbsp;错位时空</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge">3</span>&nbsp;&nbsp;红黑</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-green">4</span>&nbsp;&nbsp;是你想成为的大人吗</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-cyan">5</span>&nbsp;&nbsp;怜城辞</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-blue">6</span>&nbsp;&nbsp;想变成一切美好的事物</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-black">7</span>&nbsp;&nbsp;迟迟</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-orange">8</span>&nbsp;&nbsp;遥望</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-green">9</span>&nbsp;&nbsp;缓缓</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-blue">10</span>&nbsp;Pay Back</td>
+											</tr>
+											<tr>
+												<td><span style="font-size: 12px;color: #90949c;">查看全部></span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<div class="layui-col-md4">
+									<div class="layui-row">
+										<div class="layui-col-md5">
+											<img src="img/rank2.jpg">
+										</div>
+										<div class="layui-col-md7">
+											<div class="layui-row">
+												<p style="font-size: 18px;font-weight: bold;">新歌榜</p>
+											</div>
+											<div class="layui-row" style="margin-top: 10px;">
+												<i class="layui-icon layui-icon-play" style="font-size: 22px;"></i>
+												<i class="layui-icon layui-icon-star" style="font-size: 22px;"></i>
+											</div>
+										</div>
+									</div>
+									<table class="layui-table" lay-skin="nob">
+										<colgroup>
+											<col width="150">
+											<col width="200">
+											<col>
+										</colgroup>
+										<tbody>
+											<tr>
+												<td><span class="layui-badge">1</span>&nbsp;&nbsp;四季予你</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge">2</span>&nbsp;&nbsp;踏山河</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge">3</span>&nbsp;&nbsp;红黑</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-green">4</span>&nbsp;&nbsp;为什么</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-cyan">5</span>&nbsp;&nbsp;过</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-blue">6</span>&nbsp;&nbsp;我在等</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-black">7</span>&nbsp;&nbsp;화(火花)</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-orange">8</span>&nbsp;&nbsp;错位时空</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-green">9</span>&nbsp;&nbsp;大雾(demo)</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-blue">10</span>&nbsp;迟迟</td>
+											</tr>
+											<tr>
+												<td><span style="font-size: 12px;color: #90949c;">查看全部></span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<div class="layui-col-md4">
+									<div class="layui-row">
+										<div class="layui-col-md5">
+											<img src="img/rank3.jpg">
+										</div>
+										<div class="layui-col-md7">
+											<div class="layui-row">
+												<p style="font-size: 18px;font-weight: bold;">原创榜</p>
+											</div>
+											<div class="layui-row" style="margin-top: 10px;">
+												<i class="layui-icon layui-icon-play" style="font-size: 22px;"></i>
+												<i class="layui-icon layui-icon-star" style="font-size: 22px;"></i>
+											</div>
+										</div>
+									</div>
+									<table class="layui-table" lay-skin="nob">
+										<colgroup>
+											<col width="150">
+											<col width="200">
+											<col>
+										</colgroup>
+										<tbody>
+											<tr>
+												<td><span class="layui-badge">1</span>&nbsp;&nbsp;想变成一切美好的事物</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge">2</span>&nbsp;&nbsp;逃离</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge">3</span>&nbsp;&nbsp;努力爱过你</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-green">4</span>&nbsp;&nbsp;步履不停</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-cyan">5</span>&nbsp;&nbsp;RIGHT NOW</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-blue">6</span>&nbsp;&nbsp;大雾 (demo)</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-black">7</span>&nbsp;&nbsp;你怎么睡</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-orange">8</span>&nbsp;&nbsp;おまもりのうた</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-green">9</span>&nbsp;&nbsp;山雀</td>
+											</tr>
+											<tr>
+												<td><span class="layui-badge layui-bg-blue">10</span>&nbsp;我走就是了</td>
+											</tr>
+											<tr>
+												<td><span style="font-size: 12px;color: #90949c;">查看全部></span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			<div id="playerBox">
+				<div id="player" class="aplayer" data-type="playlist" data-id="608263008" data-fixed="true" data-server="netease"
+				 data-volume="0.4">
+				</div>
+			</div>
+			<div class="layui-row">
+				<div class="layui-col-xs12 layui-col-md12 layui-col-bg12">
+					<footer class="footer gcs-footer">
+						<div class="footer-top">
+							<a href="#" class="gray">服务条款</a> |
+							<a href="#" class="gray">隐私政策</a> |
+							<a href="#" class="gray">儿童隐私政策</a> |
+							<a href="#" class="gray">版权投诉指引</a> |
+							<a href="#" class="gray">意见反馈</a> |
+						</div>
+						<p>
+							2021.01.15
+						</p>
+
+					</footer>
+				</div>
+			</div>
+		</div>
+		<script src="layui-v2.5.7/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/APlayer.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Meting.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script>
+			//注意：导航 依赖 element 模块，否则无法进行功能性操作
+			layui.use(['element', 'carousel', 'jquery', 'layer'], function() {
+				var element = layui.element;
+				var carousel = layui.carousel;
+				var $ = layui.$;
+				var layer = layui.layer;
+				carousel.render({
+					elem: '#banner',
+					width: '100%' //设置容器宽度
+						,
+					arrow: 'always' //始终显示箭头
+					//,anim: 'updown' //切换动画方式
+				});
+				var qd_flag = false;
+				$("#qiandao").click(function() {
+					if (!qd_flag) {
+						layer.msg("签到成功,积分+5");
+						$("#qiandao").text("已签到");
+						$("#qiandao").addClass("layui-btn-disabled");
+						qd_flag = true;
+					}
+				})
+				$("#apply").click(function(){
+					layer.alert("https://music.163.com/st/musician", {icon: 1});
+				})
+
+				var musicId;
+				$("#searchBtn").click(function() {
+					var searchTxt = $("#searchTxt").val();
+					if (searchTxt == "" || searchTxt == null) {
+						layer.msg("关键词不能为空");
+					} else {
+
+						window.open("searchResult.html#/keyword=" + searchTxt);
+						$("#searchTxt").val('');
+						// var html = '<div id="player" class="aplayer" data-type="search" data-id="' + searchTxt +
+						// 	'" data-fixed="true" data-server="netease" data-volume="0.4"></div>'
+						// $('#playerBox').empty();
+						// $('#playerBox').html(html);
+
+						// $("#player").attr('data-type', 'search')
+						// $("#player").attr('data-id', '三号线')
+						// $("#player").load(location.href + "#player");
+
+					}
+
+				})
+
+			});
+		</script>
+	</body>
+</html>

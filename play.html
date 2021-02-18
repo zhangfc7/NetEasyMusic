@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>网易云音乐-正在播放</title>
+		<link rel="icon" href="img/NetEasy.png" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/play.css" />
+		<link rel="stylesheet" type="text/css" href="layui-v2.5.7/layui/css/layui.css" />
+	</head>
+	<body>
+		
+		<div class="layui-container">
+			<div id="top" class="layui-row">
+				<div class="layui-col-xs12 layui-col-sm12 layui-col-md12 layui-col-lg12">
+					<img id="logo_img" src="img/NetEasy.png" />
+					<span id="logo_title">网易云音乐</span>
+					<!-- <input id="seachSong" type="text" placeholder="搜索" autocomplete="off">
+					<button id="searchBtn" type="button" class="layui-btn layui-btn layui-btn-sm layui-btn-radius">
+						<i class="layui-icon layui-icon-search"></i>
+					</button> -->
+					<div id="top-right">
+						<img id="head_pic" src="img/head.jpg" class="layui-nav-img">
+						<span id="username">网抑云</span>
+						<span class="layui-badge layui-bg-black" style="margin-left: 5px;">Lv10</span>
+						<i class="layui-icon layui-icon-set" style="font-size: 16px; color: #fff;margin-left: 5px;"></i>
+						<i class="layui-icon layui-icon-email" style="font-size:18px; color: #fff;margin-left: 5px;"></i>
+						<i class="layui-icon layui-icon-tips" style="font-size:16px; color: #fff;margin-left: 5px;"></i>
+						<span style="font-size:18px; color: #fff;margin-left: 5px;">|</span>
+						<span style="font-size:18px; color: #fff;margin-left: 5px;">—</span>
+						<i class="layui-icon layui-icon-close" style="font-size:18px; color: #fff;margin-left: 5px;"></i>
+					</div>
+				</div>
+			</div>
+
+			<div class="layui-row">
+				<div id="left" class="layui-col-xs2 layui-col-sm2 layui-col-md2 layui-col-lg2">
+					<ul>
+						<li>发现音乐</li>
+						<li>视频</li>
+						<li>朋友</li>
+						<li>直播</li>
+						<li>私人FM</li>
+						<li><i class="layui-icon layui-icon-mike"></i>&nbsp;本地音乐</li>
+						<li><i class="layui-icon layui-icon-download-circle"></i>&nbsp;下载管理</li>
+						<li><i class="layui-icon layui-icon-upload-drag"></i>&nbsp;我的音乐云盘</li>
+						<li><i class="layui-icon layui-icon-headset"></i>&nbsp;我的电台</li>
+						<li><i class="layui-icon layui-icon-star"></i>&nbsp;我的收藏</li>
+					</ul>
+				</div>
+				<div class="layui-col-xs10 layui-col-sm10 layui-col-md10 layui-col-lg10">
+
+					<div class="layui-row" id="main">
+						<div class="layui-col-xs6 layui-col-sm6 layui-col-md6 layui-col-lg6">
+							<div>
+								<img id="SongPicBig" src="img/default_album.jpg" />
+							</div>
+						</div>
+						<div class="layui-col-xs6 layui-col-sm6 layui-col-md6 layui-col-lg6">
+							<h2 id="music_title" style="margin-top: 5px;">三号线（吉他版）</h2>
+							<p style="margin-top: 5px;">专辑：<span id="zj">三号线</span></p>
+							<p style="margin-top: 5px;"><span id="musican">歌手：刘大壮</span></p>
+							<div class="lrcdiv">
+								<ul id="lrclist" style="transform: translateY(200px);width:500px">
+									<!-- 初始值 -->
+
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- <div class="layui-row">
+						<div class="layui-col-xs8 layui-col-sm8 layui-col-md8 layui-col-lg8">
+							<hr />
+							<div>
+								<img src="img/1571070411942.jpeg" class="layui-nav-img">
+								<span>R王小二</span>
+								<p>在ktv成功唱这首歌追到女神。</p>
+								<hr />
+							</div>
+							<div>
+								<img src="img/1571070411942.jpeg" class="layui-nav-img">
+								<span>R王小二</span>
+								<p>我以为是带你走出深渊，却把你带入另一个深渊； 我以为你从前遇到的都不好，原来自己才是最渣的那一个； 我以为能给你幸福，却让一切承诺变成谎言； 我以为我是最爱你的那个，却连普通人能做到的我都做不到；
+									我以为这是爱你，原来是害你。”</p>
+								<hr />
+							</div>
+							<div>
+								<img src="img/1571070411942.jpeg" class="layui-nav-img">
+								<span>R王小二</span>
+								<p>我以为是带你走出深渊，却把你带入另一个深渊； 我以为你从前遇到的都不好，原来自己才是最渣的那一个； 我以为能给你幸福，却让一切承诺变成谎言； 我以为我是最爱你的那个，却连普通人能做到的我都做不到；
+									我以为这是爱你，原来是害你。”</p>
+								<hr />
+							</div>
+							<div>
+								<img src="img/1571070411942.jpeg" class="layui-nav-img">
+								<span>R王小二</span>
+								<p>我以为是带你走出深渊，却把你带入另一个深渊； 我以为你从前遇到的都不好，原来自己才是最渣的那一个； 我以为能给你幸福，却让一切承诺变成谎言； 我以为我是最爱你的那个，却连普通人能做到的我都做不到；
+									我以为这是爱你，原来是害你。”</p>
+								<hr />
+							</div>
+
+						</div>
+					</div> -->
+				</div>
+			</div>
+
+			<div id="bottom" class="layui-row">
+				<div class="layui-col-xs12 layui-col-sm12 layui-col-md12 layui-col-lg12">
+					<audio id="music_play" style="width: 100%;" ref="audio" src="" autoplay controls loop volume=0.5></audio>
+				</div>
+			</div>
+
+		</div>
+		<script type="text/javascript" src="layui-v2.5.7/layui/layui.js"></script>
+		<script type="text/javascript" src="js/play.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	</body>
+</html>
